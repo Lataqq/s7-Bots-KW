@@ -32,13 +32,13 @@ NumKW = 3000
 amountOfKw = 10
 
 # Database
-conn = sqlite3.connect('D:\GIT\s7-Bots\KW\dbKW.db')
+conn = sqlite3.connect('dbKW.db')
 c = conn.cursor()
 
 for i in range(amountOfKw):
     print(NumKW)
     tstart = time.perf_counter()
-    services = Service(executable_path="D:\GIT\s7-Bots\KW\chromedriver.exe")
+    services = Service(executable_path="chromedriver.exe")
     driver = webdriver.Chrome(service=services)
     driver.get("https://przegladarka-ekw.ms.gov.pl/eukw_prz/KsiegiWieczyste/wyszukiwanieKW?komunikaty=true&kontakt=true&okienkoSerwisowe=false")
     WebDriverWait(driver, 360).until(
